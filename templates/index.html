@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPR - Canlı Kontrol Paneli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans h-screen flex flex-col">
+
+    <header class="bg-blue-900 text-white p-4 shadow-md">
+        <h1 class="text-2xl font-bold text-center">Araç Plaka Tanıma Sistemi (Web Dashboard)</h1>
+    </header>
+
+    <main class="flex-grow p-8 flex flex-col md:flex-row gap-8 justify-center items-start">
+
+        <!-- Sol Taraf: Canlı Kamera -->
+        <div class="bg-white p-4 rounded-lg shadow-lg w-full md:w-7/12">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">Canlı Kamera Akışı</h2>
+            <div class="relative w-full bg-black rounded-lg overflow-hidden flex justify-center items-center">
+                <img src="/video_feed" alt="Kamera Bekleniyor..." class="w-full h-auto max-h-[500px] object-contain">
+            </div>
+        </div>
+
+        <!-- Sağ Taraf: Durum ve Loglar -->
+        <div class="w-full md:w-5/12 flex flex-col gap-6">
+
+            <!-- Sistem Durumu Kartı -->
+            <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4 text-gray-700 border-b w-full text-center pb-2">Sistem Durumu</h2>
+                <div id="status-card" class="w-full bg-gray-200 border-2 border-gray-300 p-6 rounded-xl text-center transition-colors duration-500">
+                    <p class="text-gray-500 text-sm uppercase tracking-wider mb-2">Okunan Plaka</p>
+                    <h3 id="plaka-text" class="text-3xl font-extrabold text-gray-800 tracking-widest mb-4">-------</h3>
+                    <span id="durum-badge" class="inline-block bg-gray-500 text-white px-4 py-2 rounded-full font-bold">
+                        SİSTEM HAZIR
+                    </span>
+                </div>
+            </div>
+
+            <!-- Geçmiş Loglar Tablosu -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4 text-gray-700 border-b pb-2">Son Geçiş Logları</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">Saat</th>
+                                <th scope="col" class="px-6 py-3">Plaka</th>
+                                <th scope="col" class="px-6 py-3">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody id="log-table-body">
+                            <!-- Loglar buraya JavaScript ile dinamik eklenecek -->
+                            <tr class="bg-white border-b"><td colspan="3" class="px-6 py-4 text-center text-gray-400">Henüz geçiş yapılmadı.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Anlık Durum Kontrolü
+        setInterval(async () => {
+            try {
+                const response = await fetch('/api/durum');
+                const data = await response.json();
+                const statusCard = document.getElementById('status-card');
+                const plakaText = document.getElementById('plaka-text');
+                const durumBadge = document.getElementById('durum-badge');
+
+                if (data.plaka !== "") {
+                    plakaText.innerText = data.plaka;
+                    durumBadge.innerText = "BARİYER AÇILDI";
+                    statusCard.classList.remove('bg-gray-200', 'border-gray-300');
+                    statusCard.classList.add('bg-green-100', 'border-green-500');
+                    durumBadge.classList.remove('bg-gray-500');
+                    durumBadge.classList.add('bg-green-600');
+                } else {
+                    plakaText.innerText = "BEKLENİYOR";
+                    durumBadge.innerText = "SİSTEM HAZIR";
+                    statusCard.classList.remove('bg-green-100', 'border-green-500');
+                    statusCard.classList.add('bg-gray-200', 'border-gray-300');
+                    durumBadge.classList.remove('bg-green-600');
+                    durumBadge.classList.add('bg-gray-500');
+                }
+            } catch (error) { console.error("Durum çekilemedi:", error); }
+        }, 1000);
+
+        // Logları Çekme ve Tabloyu Güncelleme
+        setInterval(async () => {
+            try {
+                const response = await fetch('/api/logs');
+                const loglar = await response.json();
+                const tbody = document.getElementById('log-table-body');
+
+                if (loglar.length > 0) {
+                    tbody.innerHTML = ""; // Tabloyu temizle
+                    loglar.forEach(log => {
+                        const tr = document.createElement('tr');
+                        tr.className = "bg-white border-b hover:bg-gray-50";
+                        tr.innerHTML = `
+                            <td class="px-6 py-4 font-medium text-gray-900">${log.zaman}</td>
+                            <td class="px-6 py-4 font-bold tracking-wider">${log.plaka}</td>
+                            <td class="px-6 py-4"><span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Onaylandı</span></td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                }
+            } catch (error) { console.error("Loglar çekilemedi:", error); }
+        }, 2000); // Logları 2 saniyede bir güncelliyoruz
+    </script>
+</body>
+</html>

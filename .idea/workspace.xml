@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cef88f1-f1f7-48cd-8d35-bf3c84b04cd8" name="Changes" comment="Plaka Tanıma Sistemi Başlangıç" />
+    <list default="true" id="6cef88f1-f1f7-48cd-8d35-bf3c84b04cd8" name="Changes" comment="Plaka Tanıma Sistemi Başlangıç">
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HuseyinSAHIN-50"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/HuseyinSAHIN-50/AracPlakaTanimaSistemi.git",
+    "accountId": "06f699b8-ee15-46f5-9ee6-6abbc24eed19"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -32,7 +47,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/HÜSEYİN/Documents/GitHub/AracPlakaTanimaSistemi"
   }
 }]]></component>
   <component name="SharedIndexes">

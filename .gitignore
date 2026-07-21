@@ -1,0 +1,18 @@
+# Python önbellek dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sanal ortam
+.venv/
+venv/
+ENV/
+
+# Yapay Zeka Modelleri (Kullanıcı kodu çalıştırdığında otomatik iner)
+*.pt
+*.onnx
+
+# Çevresel değişkenler ve IDE ayarları
+.env
+.vscode/
+.idea/

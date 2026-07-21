@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cef88f1-f1f7-48cd-8d35-bf3c84b04cd8" name="Changes" comment="Plaka Tanıma Sistemi Başlangıç">
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    <list default="true" id="6cef88f1-f1f7-48cd-8d35-bf3c84b04cd8" name="Changes" comment="Plaka Tanıma Sistemi Bitiş">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,18 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HuseyinSAHIN-50"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HuseyinSAHIN-50&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HuseyinSAHIN-50/AracPlakaTanimaSistemi.git",
-    "accountId": "06f699b8-ee15-46f5-9ee6-6abbc24eed19"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HuseyinSAHIN-50/AracPlakaTanimaSistemi.git&quot;,
+    &quot;accountId&quot;: &quot;06f699b8-ee15-46f5-9ee6-6abbc24eed19&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -44,13 +44,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/HÜSEYİN/Documents/GitHub/AracPlakaTanimaSistemi"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HÜSEYİN/Documents/GitHub/AracPlakaTanimaSistemi&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,11 +75,20 @@
       <option name="project" value="LOCAL" />
       <updated>1783942656934</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Plaka Tanıma Sistemi Bitiş">
+      <option name="closed" value="true" />
+      <created>1784626587102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784626587102</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Plaka Tanıma Sistemi Başlangıç" />
-    <option name="LAST_COMMIT_MESSAGE" value="Plaka Tanıma Sistemi Başlangıç" />
+    <MESSAGE value="Plaka Tanıma Sistemi Bitiş" />
+    <option name="LAST_COMMIT_MESSAGE" value="Plaka Tanıma Sistemi Bitiş" />
   </component>
 </project>
